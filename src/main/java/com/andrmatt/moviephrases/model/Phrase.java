@@ -14,7 +14,6 @@ public class Phrase {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idPhrase;
-
     private String moviePhrase;
     private String posterMovie;
     private String authorPhrase;

@@ -1,6 +1,7 @@
 package com.andrmatt.moviephrases.controller;
 
 import com.andrmatt.moviephrases.model.Phrase;
+import com.andrmatt.moviephrases.model.dto.PhraseDto;
 import com.andrmatt.moviephrases.service.PhraseService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,11 @@ public class PhraseController {
 
     @Autowired
     private final PhraseService service;
+
+    @GetMapping("/random")
+    public ResponseEntity<PhraseDto> getRandomPhrase() {
+        return new ResponseEntity<>(service.getRandomPhrase(), HttpStatus.OK);
+    }
 
     @GetMapping("/list")
     public ResponseEntity<Collection<Phrase>> getAllPhrases() {
